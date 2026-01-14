@@ -126,7 +126,6 @@
             position: relative;
         }
 
-        /* Face Crop on left */
         .tile-face-crop {
             width: 50px; height: 50px; border-radius: 8px;
             background-image: url('https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&q=80&w=300');
@@ -139,7 +138,6 @@
         .tile-info h4 { font-family: 'Orbitron'; font-size: 0.65rem; color: var(--neon-cyan); letter-spacing: 1px; }
         .tile-info p { font-size: 0.75rem; color: #777; }
 
-        /* Logo on right */
         .social-brand-logo { font-size: 1.4rem; width: 40px; text-align: right; }
 
         .tile.insta { border-right: 3px solid #E1306C; }
@@ -162,6 +160,7 @@
             width: 100%; padding: 18px; background: var(--neon-cyan);
             border: none; color: #000; font-family: 'Orbitron'; font-weight: 900;
             border-radius: 10px; text-transform: uppercase; box-shadow: 0 0 20px rgba(0, 242, 255, 0.4);
+            cursor: pointer;
         }
 
     </style>
@@ -172,7 +171,7 @@
 
     <nav class="header-nav">
         <div class="logo-text">SYNAPSE_v2.0</div>
-        <button class="btn-logout" onclick="alert('Logging out of Neural Net...')">Logout</button>
+        <button class="btn-logout" onclick="alert('Neural Logout Initiated...')">Logout</button>
     </nav>
 
     <div class="glitch-bar">
@@ -187,7 +186,7 @@
                 <div class="avatar-img"></div>
             </div>
             <h1 style="font-family:'Orbitron'; font-size: 1.6rem; letter-spacing: 4px;">DIVYA</h1>
-            <span style="color:var(--neon-cyan); font-size: 0.7rem; letter-spacing: 2px;">NEURAL_ASSISTANT_ACTIVE</span>
+            <span style="color:var(--neon-cyan); font-size: 0.7rem; letter-spacing: 2px;">NEURAL_ASSISTANT_STASIS</span>
         </div>
 
         <div class="stream-list">
@@ -220,7 +219,7 @@
         </div>
 
         <div class="cta-box">
-            <h3 style="font-family:'Orbitron'; font-size: 1rem; background: linear-gradient(to right, #fff, var(--neon-pink)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Restore The Echo</h3>
+            <h3 style="font-family:'Orbitron'; font-size: 1rem; color: #fff;">Restore Neural Connection</h3>
             <div class="price">$124.99</div>
             <p style="font-size: 0.8rem; color: #667; margin-bottom: 20px;">Renew to keep Divya's voice active as your personal assistant.</p>
             <button class="btn-full">REBOOT NEURAL LINK</button>
@@ -229,12 +228,11 @@
     </div>
 
     <script>
-        // MATRIX DATA STREAM BACKGROUND
         const canvas = document.getElementById('bg-canvas');
         const ctx = canvas.getContext('2d');
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
-        const alphabet = "010101010101010101010101";
+        const alphabet = "0101";
         const fontSize = 14;
         const columns = canvas.width / fontSize;
         const drops = Array(Math.floor(columns)).fill(1);
@@ -254,5 +252,4 @@
         setInterval(draw, 35);
     </script>
 </body>
-
 </html>
