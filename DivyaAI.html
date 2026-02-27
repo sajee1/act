@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SYNAPSE | Neural Interface</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --neon-cyan:#00f2ff;
+    --neon-pink:#ff00ea;
+    --deep-bg:#05050a;
+    --card-bg:rgba(15,15,25,0.95);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+    background: radial-gradient(circle at 20% 30%, #0f1b2e 0%, #05050a 40%);
+    color:#e0e0e0;
+    font-family:'Rajdhani',sans-serif;
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+/* --- Animated Grid Background --- */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background-image:
+        linear-gradient(rgba(0,242,255,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,242,255,0.05) 1px, transparent 1px);
+    background-size:40px 40px;
+    animation:gridMove 10s linear infinite;
+    z-index:-1;
+}
+
+@keyframes gridMove{
+    from{background-position:0 0}
+    to{background-position:0 40px}
+}
+
+/* HEADER */
+.header-nav{
+    background:rgba(0,0,0,0.8);
+    padding:15px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid rgba(0,242,255,0.2);
+    backdrop-filter:blur(10px);
+}
+
+.logo-text{
+    font-family:'Orbitron';
+    font-weight:900;
+    color:var(--neon-cyan);
+    letter-spacing:2px;
+    font-size:0.9rem;
+}
+
+.btn-logout{
+    background:transparent;
+    color:#666;
+    border:1px solid #333;
+    padding:5px 12px;
+    border-radius:4px;
+    font-size:0.7rem;
+    text-transform:uppercase;
+    font-family:'Orbitron';
+    cursor:pointer;
+    transition:.3s;
+}
+.btn-logout:hover{
+    color:#ff3e3e;
+    border-color:#ff3e3e;
+}
+
+/* CONTAINER */
+.mobile-container{
+    padding:25px;
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+}
+
+/* AVATAR */
+.avatar-card{
+    background:var(--card-bg);
+    border:1px solid rgba(0,242,255,0.3);
+    border-radius:20px;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 0 40px rgba(0,242,255,0.05);
+}
+
+.avatar-frame{
+    width:150px;
+    height:150px;
+    margin:0 auto 15px;
+    border-radius:50%;
+    border:2px solid var(--neon-cyan);
+    padding:6px;
+}
+
+.avatar-img{
+    width:100%;
+    height:100%;
+    border-radius:50%;
+    background:url('https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&q=80&w=500') center/cover;
+    filter:grayscale(1) hue-rotate(150deg) brightness(.7);
+}
+
+/* SOCIAL TILES */
+.stream-list{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.tile{
+    text-decoration:none;
+    background:rgba(255,255,255,0.03);
+    padding:18px;
+    border-radius:14px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    border:1px solid rgba(255,255,255,0.05);
+    transition:.3s;
+}
+
+.tile:hover{
+    transform:translateY(-4px);
+    border-color:var(--neon-cyan);
+    box-shadow:0 0 20px rgba(0,242,255,0.3);
+}
+
+.tile-info h4{
+    font-family:'Orbitron';
+    font-size:0.7rem;
+    color:var(--neon-cyan);
+    letter-spacing:1px;
+}
+
+.tile-info p{
+    font-size:0.8rem;
+    color:#888;
+}
+
+.social-brand-logo{
+    font-size:1.6rem;
+}
+
+/* Brand Colors */
+.insta .social-brand-logo{color:#E1306C}
+.twitter .social-brand-logo{color:#1DA1F2}
+.facebook .social-brand-logo{color:#1877F2}
+
+/* CTA */
+.cta-box{
+    background:linear-gradient(180deg,#0f0f1a 0%,#000 100%);
+    padding:25px;
+    border-radius:20px;
+    border:1px solid var(--neon-cyan);
+    text-align:center;
+}
+
+.price{
+    font-size:2.2rem;
+    font-family:'Orbitron';
+    margin:10px 0;
+}
+
+.btn-full{
+    width:100%;
+    padding:18px;
+    background:var(--neon-cyan);
+    border:none;
+    color:#000;
+    font-family:'Orbitron';
+    font-weight:900;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.3s;
+}
+.btn-full:hover{
+    background:#00c3cc;
+}
+</style>
+</head>
+
+<body>
+
+<nav class="header-nav">
+    <div class="logo-text">SYNAPSE_v2.1</div>
+    <button class="btn-logout">Logout</button>
+</nav>
+
+<div class="mobile-container">
+
+<div class="avatar-card">
+    <div class="avatar-frame">
+        <div class="avatar-img"></div>
+    </div>
+    <h1 style="font-family:'Orbitron';font-size:1.6rem;letter-spacing:4px;">DIVYA</h1>
+    <span style="color:var(--neon-cyan);font-size:0.7rem;letter-spacing:2px;">
+        NEURAL_ASSISTANT_ACTIVE
+    </span>
+</div>
+
+<div class="stream-list">
+
+    <!-- INSTAGRAM LINK -->
+    <a href="https://instagram.com" target="_blank" class="tile insta">
+        <div class="tile-info">
+            <h4>SOCIAL_SENTIMENT</h4>
+            <p>Instagram neural sync active.</p>
+        </div>
+        <div class="social-brand-logo">
+            <i class="fab fa-instagram"></i>
+        </div>
+    </a>
+
+    <!-- TWITTER LINK -->
+    <a href="https://twitter.com" target="_blank" class="tile twitter">
+        <div class="tile-info">
+            <h4>CONVERSATION_MAP</h4>
+            <p>X (Twitter) intelligence mapped.</p>
+        </div>
+        <div class="social-brand-logo">
+            <i class="fab fa-twitter"></i>
+        </div>
+    </a>
+
+    <!-- FACEBOOK LINK -->
+    <a href="https://facebook.com" target="_blank" class="tile facebook">
+        <div class="tile-info">
+            <h4>NETWORK_STREAM</h4>
+            <p>Facebook memory grid synced.</p>
+        </div>
+        <div class="social-brand-logo">
+            <i class="fab fa-facebook-f"></i>
+        </div>
+    </a>
+
+</div>
+
+<div class="cta-box">
+    <h3 style="font-family:'Orbitron';font-size:1rem;">Restore Neural Connection</h3>
+    <div class="price">$124.99</div>
+    <p style="font-size:0.8rem;color:#667;margin-bottom:20px;">
+        Renew to keep Divya's AI core active.
+    </p>
+    <button class="btn-full">REBOOT NEURAL LINK</button>
+</div>
+
+</div>
+</body>
+</html>
